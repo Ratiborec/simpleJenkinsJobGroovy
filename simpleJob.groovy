@@ -11,8 +11,7 @@ import org.jenkinsci.plugins.*
 
 
 Jenkins jenkins = Jenkins.instance
-def job
-job = jenkins.createProject(FreeStyleProject.class, "name")
+def job = jenkins.createProject(FreeStyleProject.class, "name")
 job.getBuildWrappersList().add(new PreBuildCleanup( new ArrayList<Pattern>(), false,"","") );
 job.setScm(new GitSCM(i'git'));
 job.getBuildersList().add(new hudson.tasks.Shell('echo "Hello World"'));
