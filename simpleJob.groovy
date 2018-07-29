@@ -13,7 +13,7 @@ import org.jenkinsci.plugins.*
 Jenkins jenkins = Jenkins.instance
 def job = jenkins.createProject(FreeStyleProject.class, "name")
 job.getBuildWrappersList().add(new PreBuildCleanup( new ArrayList<Pattern>(), false,"","") );
-job.setScm(new GitSCM(i'git'));
+job.setScm(new GitSCM('git'));
 job.getBuildersList().add(new hudson.tasks.Shell('echo "Hello World"'));
 job.save()
 
